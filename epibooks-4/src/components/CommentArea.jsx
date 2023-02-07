@@ -9,7 +9,7 @@ const CommentArea = (props) => {
   const [isLoading, setIsLoading] = useState(false)
   const [isError, setIsError] = useState(false)
 
-  useEffect(() => {
+  
     const fetchData = async () => {
       setIsLoading(true)
       try {
@@ -39,8 +39,9 @@ const CommentArea = (props) => {
         setIsError(true)
       }
     }
-    fetchData()
-  }, [props.asin])
+    useEffect(() => {
+      fetchData()
+    }, [props.asin])
 
   return (
     <div className="text-center">
